@@ -21,7 +21,13 @@ repositories {
 }
 
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web:1.5.8.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework:spring-orm:5.0.1.RELEASE'
+    compile 'org.hibernate:hibernate-core:5.2.12.Final'
+    compile 'org.apache.tomcat:tomcat-dbcp:9.0.1'
+    testCompile 'com.h2database:h2:1.4.196'
+//    compile 'org.hashids:hashids:1.0.3'
+//    compile 'org.springframework.boot:spring-boot-starter-web:1.5.8.RELEASE'
     //compile 'org.springframework:spring-webmvc:5.0.1.RELEASE'
 
 }
