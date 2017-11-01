@@ -1,3 +1,4 @@
+/*
 package com.richardwang.config;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
@@ -39,3 +40,4 @@ public class DataConfig {
         return ds;
     }
 }
+*/

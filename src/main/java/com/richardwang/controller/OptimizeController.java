@@ -1,4 +1,4 @@
-package com.richardwang;
+package com.richardwang.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +14,11 @@ public class OptimizeController {
         return "/home";
     }
 
+    @RequestMapping
+    public String listingDetails(){
+
+        return "/details";
+    }
 
 }
 

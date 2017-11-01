@@ -37,7 +37,7 @@ public enum neighborhood {
     TWIN("Twin Peaks"),
     VISITACION("Visitacion Valley"),
     WEST("West of Twin Peaks"),
-    WESTERN("Western Addition"),
+    WESTERN("Western Addition");
 
 
     private String name;
