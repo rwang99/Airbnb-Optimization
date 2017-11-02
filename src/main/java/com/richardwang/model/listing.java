@@ -22,6 +22,27 @@ public class Listing {
 
     private int numReviews, reviewScore;
     private double reviewPerMonth;
+
+    protected Listing(){
+
+    }
+
+    public Listing(int id, String title, String hostName, String neighbor, String room,
+                   double latitude, double longitude, double price, int numReviews, int reviewScore, double reviewPerMonth){
+
+        this.id = id;
+        this.title = title;
+        this.hostName = hostName;
+        this.n = neighborhood.valueOf(neighbor);
+        this.r = roomType.valueOf(room);
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.price = price;
+        this.numReviews = numReviews;
+        this.reviewScore = reviewScore;
+        this.reviewPerMonth = reviewPerMonth;
+    }
+
     public Listing(int id, String title, String hostName, neighborhood n, roomType r,
                    double latitude, double longitude, double price, int numReviews, int reviewScore, double reviewPerMonth) {
         this.id = id;

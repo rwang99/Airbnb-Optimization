@@ -10,15 +10,16 @@ public class OptimizeController {
 
     @RequestMapping(value = "/")
     public String getHomepage(){
-        //return "tomato tomato";
         return "/home";
     }
 
+/*
     @RequestMapping
     public String listingDetails(){
 
         return "/details";
     }
+*/
 
 }
 

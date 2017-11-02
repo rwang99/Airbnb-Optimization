@@ -25,7 +25,7 @@ public class DbSeeder implements CommandLineRunner{
                 -37, 37, 150, 5, 98, .5);
         Listing l2 = new Listing(10, "Stunning house", "Joe", neighborhood.CASTRO, roomType.ENTIRE,
                 -37, 38, 200, 5, 95, .8);
-        Listing l3 = new Listing(9, "Cabin in the woods", "Jim", neighborhood.BAYVIEW, roomType.ENTIRE,
+        Listing l3 = new Listing(12, "Cabin in the woods", "Jim", neighborhood.BAYVIEW, roomType.ENTIRE,
                 -37, 37, 150, 2, 94, .3);
 
 
