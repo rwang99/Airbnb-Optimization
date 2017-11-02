@@ -21,4 +21,7 @@ public interface ListingRepository extends MongoRepository<Listing,Integer>{
     @Query(value = "{r:?0}")
     List<Listing> findByR(roomType r);
 
+    @Query(value = "{hostName:?0}")
+    List<Listing> findByName(String hostName);
+
 }

@@ -1,5 +1,9 @@
 package com.richardwang.model;
 
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Map;
+
 public enum neighborhood {
     BAYVIEW("Bayview"),
     BERNAL("Bernal Heights"),
@@ -42,11 +46,23 @@ public enum neighborhood {
 
     private String name;
 
+    private static final Map<String, neighborhood> lookup = new HashMap<>();
+
+    static {
+        for (neighborhood n : EnumSet.allOf(neighborhood.class)){
+            lookup.put(n.getName(), n);
+        }
+    }
+
     neighborhood(String name){
         this.name = name;
     }
 
     public String getName(){
         return name;
+    }
+
+    public static neighborhood get(String name){
+        return lookup.get(name);
     }
 }

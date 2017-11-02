@@ -1,5 +1,7 @@
 package com.richardwang.dao;
 
+// "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" to run mongo
+
 import com.richardwang.dao.ListingRepository;
 import com.richardwang.model.Listing;
 import com.richardwang.model.neighborhood;
@@ -21,19 +23,13 @@ public class DbSeeder implements CommandLineRunner{
 
     @Override
     public void run(String... strings) throws Exception {
-        Listing l1 = new Listing(9, "Beautiful house", "Richard", neighborhood.BAYVIEW, roomType.ENTIRE,
-                -37, 37, 150, 5, 98, .5);
-        Listing l2 = new Listing(10, "Stunning house", "Joe", neighborhood.CASTRO, roomType.ENTIRE,
-                -37, 38, 200, 5, 95, .8);
-        Listing l3 = new Listing(12, "Cabin in the woods", "Jim", neighborhood.BAYVIEW, roomType.ENTIRE,
-                -37, 37, 150, 2, 94, .3);
+
+        // UNCOMMENT BELOW TWO LINES TO REFRESH DATA
+
+        //listingRep.deleteAll();
+        //listingRep.save(CSVreader.readCSV());
 
 
-        // drop all listings
-        this.listingRep.deleteAll();
-
-        List<Listing> listings = Arrays.asList(l1, l2, l3);
-        this.listingRep.save(listings);
 
     }
 
