@@ -24,11 +24,13 @@ public class DbSeeder implements CommandLineRunner{
     @Override
     public void run(String... strings) throws Exception {
 
-        // UNCOMMENT BELOW TWO LINES TO REFRESH DATA
+        // UNCOMMENT BELOW TWO LINES TO REFRESH/RESEED DATA
+/*
 
-        //listingRep.deleteAll();
-        //listingRep.save(CSVreader.readCSV());
+        listingRep.deleteAll();
+        listingRep.save(CSVreader.readCSV());
 
+*/
 
 
     }

@@ -24,6 +24,7 @@
     <orderEntry type="library" name="Gradle: org.springframework:spring-tx:4.3.12.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver:3.4.3" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-mongodb:1.10.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:1.5.8.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:1.5.8.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-logging:1.5.8.RELEASE" level="project" />
@@ -34,7 +35,6 @@
     <orderEntry type="library" name="Gradle: org.springframework:spring-web:4.3.12.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:4.3.12.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.thymeleaf:thymeleaf:2.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy:2.4.12" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver-core:3.4.3" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:bson:3.4.3" level="project" />

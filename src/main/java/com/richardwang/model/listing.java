@@ -21,10 +21,14 @@ public class Listing {
     private double price;
     private double cleaning;
 
+
+
     private int avail30, avail60, avail90, avail365;
 
     private int numReviews, reviewScore;
     private double reviewPerMonth;
+
+    private boolean valid;
 
     protected Listing(){
 
@@ -52,9 +56,14 @@ public class Listing {
         this.numReviews = numReviews;
         this.reviewScore = reviewScore;
         this.reviewPerMonth = reviewPerMonth;
+        if (reviewScore == -1 || reviewPerMonth == -1){
+            this.valid = false;
+        } else {
+            this.valid = true;
+        }
     }
 
-    public Listing(long id, String title, String hostName, neighborhood n, roomType r,
+    /*public Listing(long id, String title, String hostName, neighborhood n, roomType r,
                    double latitude, double longitude, double price, double cleaning, int numReviews,
                    int reviewScore, double reviewPerMonth) {
         this.id = id;
@@ -69,7 +78,7 @@ public class Listing {
         this.numReviews = numReviews;
         this.reviewScore = reviewScore;
         this.reviewPerMonth = reviewPerMonth;
-    }
+    }*/
 
     public long getId() {
         return id;
@@ -115,6 +124,26 @@ public class Listing {
 
     public double getReviewPerMonth() {
         return reviewPerMonth;
+    }
+
+    public int getAvail30() {
+        return avail30;
+    }
+
+    public int getAvail60() {
+        return avail60;
+    }
+
+    public int getAvail90() {
+        return avail90;
+    }
+
+    public int getAvail365() {
+        return avail365;
+    }
+
+    public boolean isValid() {
+        return valid;
     }
 
 
