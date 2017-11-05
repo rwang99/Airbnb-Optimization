@@ -74,7 +74,7 @@ public class ListingController {
         return l;
     }
 
-    // Deliverable 1: 1
+  /*  // Deliverable 1: 1
     @GetMapping("/hostName/{name}")
     public Map<String, Double> getByHostName(@PathVariable("name") String name){
         List<Listing> listingList = listingRep.findByValid(true);
@@ -272,6 +272,6 @@ public class ListingController {
         sortedByValues.putAll(reviewAggregate);
         return sortedByValues;
     }
-
+*/
 
 }

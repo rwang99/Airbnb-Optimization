@@ -2,13 +2,53 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" th:href="@{/app.css}"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"/>
+
+
+    <style>
+
+        body {
+            margin: 0;
+            background-image: url("../../static/images/bg.jpg");
+            background-size: 100% auto;
+            display: compact;
+
+        }
+
+        h1 {
+            padding: 10px;
+
+            background-color: #778899;
+            color: #ffffff;
+        }
+
+        .banner {
+            background-color: white;
+            padding: 10px;
+            opacity: 0.9;
+        }
+
+        .font1 {
+            font-family: Lobster, Monospace, Sans Serif;
+        }
+
+    </style>
+
+
+
     <title>Airbnb Optimization</title>
 </head>
-<body>
-<h1>Home</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eos impedit minus obcaecati quaerat quam qui quo repudiandae sapiente veniam. Cum eius reiciendis rem sit voluptatum? Nihil possimus quisquam tempore!</p>
 
-<img src="http://placehold.it/300x300/5fcf80/ffffff" alt="logo"/>
+<body>
+    <div class="container-fluid">
+        <h1 class = "font1">Airbnb Optimization</h1>
+
+        <div class = "banner img-responsive col-md-12" id="chart_div1"></div>
+        <div class = "banner img-responsive col-md-12" id="chart_div2"></div>
+    </div>
+
+    <h1><a href="home.html">click here to go to home</a></h1>
+    <h1><a href="metrics.html">click here to go to metrics</a></h1>
 </body>
 </html>

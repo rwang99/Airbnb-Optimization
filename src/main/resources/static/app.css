@@ -2,6 +2,8 @@
 
 body {
     font-family: 'varela round', sans-serif;
+    background: url(static/images/bg.jpg) no-repeat center center fixed;
+    background-size: 100% auto;
 }
 
 h1 {
