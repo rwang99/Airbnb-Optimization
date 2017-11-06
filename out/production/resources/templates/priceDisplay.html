@@ -30,6 +30,7 @@
             background-color: white;
             padding: 10px;
             opacity: 0.9;
+            margin: 10px
         }
 
         .font1 {
@@ -63,13 +64,13 @@
             <form method = "post" action="/priceDisplay">
                 <h2> Input coordinates to get estimated weekly profits using Airbnb!</h2>
                 <div class="form-group">
-                    <input class = "form-control" type = "number" step = "0.00000001" name="lat"> Latitude, </input>
-                    <input class = "form-control" type = "number" step = "0.00000001" name="long"> Longitude</input>
+                    <input class = "form-control" required = "true" type = "number" step = "0.00000001" name="lat"> Latitude, </input>
+                    <input class = "form-control" required = "true" type = "number" step = "0.00000001" name="long"> Longitude</input>
                     <button class = "btn btn-primary" type="submit">Get!</button>
                 </div>
             </form>
 
-            <h2 th:text="${estimation}"></h2>
+            <h2 th:text="'At your location, we estimate that you can earn around $' + ${estimation} + ' per week using Airbnb.'"></h2>
         </div>
     </div>
 

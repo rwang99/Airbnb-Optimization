@@ -30,6 +30,7 @@
             background-color: white;
             padding: 10px;
             opacity: 0.9;
+            margin: 10px
         }
 
         .font1 {
@@ -57,6 +58,15 @@
             <h3 class = "col-md-1"><a href="other.html" style = "color:white">other</a></h3>
         </div>
 
+        <div class = "banner">
+            <h4 th:text="'The neighborhood with the most popular reviews is ' + ${neighborhood} + ' with an average score of '
+            + ${score} + ' out of 100.'"></h4>
+        </div>
+
+        <div class = "banner">
+            <h2>About this project:</h2>
+            <p> This project was created by Richard Wang. </p>
+        </div>
     </div>
 
 

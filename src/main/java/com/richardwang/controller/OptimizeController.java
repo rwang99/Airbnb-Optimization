@@ -29,6 +29,12 @@ public class OptimizeController {
         return "/home";
     }
 
+    @RequestMapping(value = "/home")
+    public String getHomepage2(){
+        return "/home";
+    }
+
+
 /*
     @RequestMapping(value="/hello", method = RequestMethod.GET)
     public String helloForm(){
@@ -211,7 +217,7 @@ public class OptimizeController {
 
     @PostMapping("/priceDisplay")
 //    @ResponseBody
-    public String estimatedPrice(HttpServletRequest request){
+    public String estimatedPrice(HttpServletRequest request, ModelMap model){
         Double lat = Double.valueOf(request.getParameter("lat"));
         Double lon = Double.valueOf(request.getParameter("long"));
         double margin = .1;         // Radius in terms of miles
@@ -239,8 +245,13 @@ public class OptimizeController {
             //System.out.println(sumPrice + " " + frequency);
             margin *= 2;            // Doubles margin of error until finds at least 30 listings to make an accurate judgement off
         }
-        System.out.println((sumPrice/frequency) * (sumAvail60/frequency));
+        model.addAttribute("estimation",Math.round((sumPrice/frequency) * (sumAvail60/frequency)*100)/100);
         return "/priceDisplay";
+    }
+
+    @GetMapping("/bookings")
+    public String getBookings(){
+        return "/bookings";
     }
 
     @GetMapping("/idealPrice/{lat}/{lon}")
@@ -274,9 +285,8 @@ public class OptimizeController {
         return (sumPrice/frequency) * (sumAvail60/frequency);
     }
 
-    @GetMapping("/popularNeighborhoods")
-    @ResponseBody
-    public Map<neighborhood, Double> popularNeighborhoods(){
+    @GetMapping("/other")
+    public String popularNeighborhoods(ModelMap model){
         List<Listing> listingList = listingRep.findByValid(true);
         Map<neighborhood, Double> reviewAggregate = new HashMap<>();
         Map<neighborhood, Integer> frequency = new HashMap<>();
@@ -302,9 +312,13 @@ public class OptimizeController {
             }
         };
 
-        Map<neighborhood, Double> sortedByValues = new TreeMap<neighborhood, Double>(valueComparator);
+        TreeMap<neighborhood, Double> sortedByValues = new TreeMap<neighborhood, Double>(valueComparator);
         sortedByValues.putAll(reviewAggregate);
-        return sortedByValues;
+
+        model.addAttribute("neighborhood", sortedByValues.firstKey().getName());
+        model.addAttribute("score", sortedByValues.firstEntry().getValue());
+
+        return "/other";
     }
 
 
