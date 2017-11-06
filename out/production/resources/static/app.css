@@ -1,13 +1,35 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 
 body {
-    font-family: 'varela round', sans-serif;
-    background: url(static/images/bg.jpg) no-repeat center center fixed;
+    margin: 0;
+    background-color: black;
+    background-image: url("../../static/images/bg.jpg");
     background-size: 100% auto;
+    display: compact;
+
 }
 
 h1 {
     padding: 10px;
-    background-color: #896bb3;
-    color: #ffffff;
+    color: white;
+}
+
+h4 {
+    color: white;
+    padding: 10px;
+}
+
+.banner {
+    background-color: white;
+    padding: 10px;
+    opacity: 0.9;
+    margin: 10px
+}
+
+.font1 {
+    font-family: Lobster, Monospace, Sans-serif;
+}
+
+.b1{
+    background-color: rgba(0, 0, 0, 0.5);
 }
