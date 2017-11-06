@@ -11,6 +11,7 @@
 
         body {
             margin: 0;
+            background-color: black;
             background-image: url("../../static/images/bg.jpg");
             background-size: 100% auto;
             display: compact;
@@ -19,38 +20,39 @@
 
         h1 {
             padding: 10px;
+            color: white;
+        }
 
-            background-color: #778899;
-            color: #ffffff;
+        h3 {
+            color: white;
+            padding: 10px;
         }
 
         .banner {
             background-color: white;
             padding: 10px;
-            opacity: 0.9
+            opacity: 0.9;
+            margin: 10px
         }
 
         .font1 {
             font-family: Lobster, Monospace, Sans Serif;
         }
 
+        .b1{
+            background-color: rgba(0, 0, 0, 0.5);
+        }
     </style>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" th:inline="javascript">
 
-      // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart);
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
       function drawChart() {
 
-        // Create the data table.
+
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Room Type');
         data.addColumn('number', 'Average Cost');
@@ -60,64 +62,101 @@
           ['Shared', [[${costRoom3}]] ]
         ]);
 
-        // Set chart options
         var options = {'title':'Average Price per Listing Type',
                        'width':500,
                        'height':300};
 
-        // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.BarChart(document.getElementById('chart_div1'));
         chart.draw(data, options);
-      }
-    </script>
-    <script type="text/javascript" th:inline="javascript">
 
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Room Type');
-        data.addColumn('number', 'Average Cost');
-        data.addRows([
+        var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'Room Type');
+        data2.addColumn('number', 'Average Cost');
+        data2.addRows([
           ['Private', [[${percentRoom1}]] ],
           ['Entire', [[${percentRoom2}]] ],
           ['Shared', [[${percentRoom3}]] ]
         ]);
 
-        // Set chart options
-        var options = {'title':'Percent distribution of Listing Type',
+        var options2 = {'title':'Percent distribution of Listing Type',
                        'width':500,
                        'height':300};
 
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
-        chart.draw(data, options);
+        var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));
+        chart2.draw(data2, options2);
+
+        var data3 = new google.visualization.DataTable();
+        data3.addColumn('string', 'Room Type');
+        data3.addColumn('number', 'Average Cost');
+        data3.addRows([
+          ['Marina', [[${n1MARINA}]] ],
+          ['Russian', [[${n1RUSSIAN}]] ],
+          ['Pacific', [[${n1PACIFIC}]] ],
+          ['Potrero Hill', [[${n1POTRERO}]] ],
+          ['Presidio Heights', [[${n1PRESIDIOH}]] ],
+          ['Golden Gate Park', [[${n1GOLDEN}]] ],
+          ['Castro/Upper Market', [[${n1CASTRO}]] ],
+          ['Financial District', [[${n1FINANCIAL}]] ],
+          ['Parkside', [[${n1PARKSIDE}]] ],
+          ['Noe Valley', [[${n1NOE}]] ],
+          ['North Beach', [[${n1NORTH}]] ],
+          ['Haight Ashbury', [[${n1HAIGHT}]] ],
+          ['Western Addition', [[${n1WESTERN}]] ],
+          ['South of Market', [[${n1SOUTH}]] ],
+          ['Glen Park', [[${n1GLEN}]] ],
+          ['Nob Hill', [[${n1NOB}]] ],
+          ['Inner Sunset', [[${n1INNERS}]] ],
+          ['Inner Richmond', [[${n1INNERR}]] ],
+          ['Mission', [[${n1MISSION}]] ],
+          ['Diamond Heights', [[${n1DIAMOND}]] ],
+          ['Twin Peaks', [[${n1TWIN}]] ],
+          ['Seacliff', [[${n1SEACLIFF}]] ],
+          ['Bernal Heights', [[${n1BERNAL}]] ],
+          ['Chinatown', [[${n1CHINATOWN}]] ],
+          ['Presidio', [[${n1PRESIDIO}]] ],
+          ['Outer Richmond', [[${n1OUTERR}]] ],
+          ['West of Twin Peaks', [[${n1WEST}]] ],
+          ['Downtown/Civic Center', [[${n1DOWNTOWN}]] ],
+          ['Outer Mission', [[${n1OUTERM}]] ],
+          ['Outer Sunset', [[${n1OUTERS}]] ],
+          ['Ocean View', [[${n1OCEAN}]] ],
+          ['Visitacion', [[${n1VISITACION}]] ],
+          ['Lakeshore', [[${n1LAKESHORE}]] ],
+          ['Crocker Amazon', [[${n1CROCKER}]] ],
+          ['Ecelsior', [[${n1EXCELSIOR}]] ],
+          ['Bayview', [[${n1BAYVIEW}]] ],
+          ['Treasure Island/YBI', [[${n1TREASURE}]] ]
+        ]);
+
+        var options3 = {'title':'Most expensive neighborhoods',
+                       'width':600,
+                       'height':800};
+
+        var chart3 = new google.visualization.BarChart(document.getElementById('chart_div3'));
+        chart3.draw(data3, options3);
+
       }
     </script>
+
 
     <title>Airbnb Optimization</title>
 </head>
 
 <body>
     <div class="container-fluid">
-        <h1 class = "font1">Airbnb Optimization</h1>
-
-        <div class = "banner">
-            <div class = "banner img-responsive col-md-12" id="chart_div1"></div>
-            <div class = "banner img-responsive col-md-12" id="chart_div2"></div>
+        <div class = "row b1">
+            <h1 class = "col-md-7">Airbnb Optimization</h1>
+            <h3 class = "col-md-1"><a href="/" style = "color:white">home</a></h3>
+            <h3 class = "col-md-1"><a href="metrics.html" style = "color:white">metrics</a></h3>
+            <h3 class = "col-md-1"><a href="price.html" style = "color:white">price estimator</a></h3>
+            <h3 class = "col-md-1"><a href="bookings.html" style = "color:white">bookings optimization</a></h3>
+            <h3 class = "col-md-1"><a href="other.html" style = "color:white">other</a></h3>
         </div>
 
-        <h1><a href="home.html">click here to go to home</a></h1>
-        <h1><a href="metrics.html">click here to go to metrics</a></h1>
+        <div class = "banner img-responsive col-md-12" id="chart_div1"></div>
+        <div class = "banner img-responsive col-md-12" id="chart_div2"></div>
+        <div class = "banner img-responsive col-md-12" id="chart_div3"></div>
+
 
     </div>
 </body>

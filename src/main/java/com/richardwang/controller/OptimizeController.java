@@ -124,6 +124,26 @@ public class OptimizeController {
         model.addAttribute("percentRoom2", distribution12.get(roomType.ENTIRE)*100);
         model.addAttribute("percentRoom3", distribution12.get(roomType.SHARED)*100);
 
+        // Deliverable 1 : 3: Most expensive neighborhoods
+
+        Map<neighborhood,Double> priceAggregate = new HashMap<>();
+        Map<neighborhood, Integer> frequency13 = new HashMap<>();
+
+        for (Listing l : listingList){
+            if (priceAggregate.containsKey(l.getN())){
+                priceAggregate.put(l.getN(),priceAggregate.get(l.getN())+l.getPrice());
+                frequency13.put(l.getN(),frequency13.get(l.getN())+1);
+            } else {
+                priceAggregate.put(l.getN(),l.getPrice());
+                frequency13.put(l.getN(),1);
+            }
+        }
+
+        for (Map.Entry<neighborhood, Double> p : priceAggregate.entrySet()){
+            priceAggregate.put(p.getKey(),p.getValue()/frequency13.get(p.getKey()));
+            model.addAttribute("n1"+p.getKey().toString(), p.getValue());
+        }
+
         return "/metrics";
     }
 
@@ -149,7 +169,7 @@ public class OptimizeController {
         return distribution;
     }*/
 
-    // Deliverable 1: 3, bar graph
+/*    // Deliverable 1: 3, bar graph
     @GetMapping("/expensiveNeighborhoods")
     @ResponseBody
     public Map<neighborhood, Double> expensiveNeighborhoods(){
@@ -181,11 +201,19 @@ public class OptimizeController {
         Map<neighborhood, Double> sortedByValues = new TreeMap<neighborhood, Double>(valueComparator);
         sortedByValues.putAll(priceAggregate);
         return sortedByValues;
+    }*/
+
+    @GetMapping("/price")
+ //   @ResponseBody
+    public String price(){
+        return "/price";
     }
 
-    @GetMapping("/estimatedPrice/{lat}/{lon}")
-    @ResponseBody
-    public double estimatedPrice(@PathVariable double lat, @PathVariable double lon){
+    @PostMapping("/priceDisplay")
+//    @ResponseBody
+    public String estimatedPrice(HttpServletRequest request){
+        Double lat = Double.valueOf(request.getParameter("lat"));
+        Double lon = Double.valueOf(request.getParameter("long"));
         double margin = .1;         // Radius in terms of miles
         margin /= 69.0;       // conversion
 
@@ -211,7 +239,8 @@ public class OptimizeController {
             //System.out.println(sumPrice + " " + frequency);
             margin *= 2;            // Doubles margin of error until finds at least 30 listings to make an accurate judgement off
         }
-        return (sumPrice/frequency) * (sumAvail60/frequency);
+        System.out.println((sumPrice/frequency) * (sumAvail60/frequency));
+        return "/priceDisplay";
     }
 
     @GetMapping("/idealPrice/{lat}/{lon}")

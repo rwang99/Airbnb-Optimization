@@ -39,6 +39,7 @@
         .b1{
             background-color: rgba(0, 0, 0, 0.5);
         }
+
     </style>
 
 
@@ -48,15 +49,26 @@
 
 <body>
     <div class="container-fluid">
+
         <div class = "row b1">
             <h1 class = "col-md-7">Airbnb Optimization</h1>
-            <h3 class = "col-md-1"><a href="/" style = "color:white">home</a></h3>
+            <h3 class = "col-md-1"><a href="home.html" style = "color:white">home</a></h3>
             <h3 class = "col-md-1"><a href="metrics.html" style = "color:white">metrics</a></h3>
             <h3 class = "col-md-1"><a href="price.html" style = "color:white">price estimator</a></h3>
             <h3 class = "col-md-1"><a href="bookings.html" style = "color:white">bookings optimization</a></h3>
             <h3 class = "col-md-1"><a href="other.html" style = "color:white">other</a></h3>
         </div>
 
+        <div class = "banner">
+            <form method = "post" action="/priceDisplay">
+                <h2> Input coordinates to get estimated weekly profits using Airbnb!</h2>
+                <div class="form-group">
+                    <input class = "form-control" type = "number" step = "0.00000001" name="lat"> Latitude, </input>
+                    <input class = "form-control" type = "number" step = "0.00000001" name="long"> Longitude</input>
+                    <button class = "btn btn-primary" type="submit">Get!</button>
+                </div>
+            </form>
+        </div>
     </div>
 
 

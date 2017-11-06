@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"/>
 
-
     <style>
 
         body {
             margin: 0;
+            background-color: black;
             background-image: url("../../static/images/bg.jpg");
             background-size: 100% auto;
             display: compact;
@@ -18,9 +18,12 @@
 
         h1 {
             padding: 10px;
+            color: white;
+        }
 
-            background-color: #778899;
-            color: #ffffff;
+        h3 {
+            color: white;
+            padding: 10px;
         }
 
         .banner {
@@ -33,6 +36,9 @@
             font-family: Lobster, Monospace, Sans Serif;
         }
 
+        .b1{
+            background-color: rgba(0, 0, 0, 0.5);
+        }
     </style>
 
 
@@ -42,13 +48,17 @@
 
 <body>
     <div class="container-fluid">
-        <h1 class = "font1">Airbnb Optimization</h1>
+        <div class = "row b1">
+            <h1 class = "col-md-7">Airbnb Optimization</h1>
+            <h3 class = "col-md-1"><a href="/" style = "color:white">home</a></h3>
+            <h3 class = "col-md-1"><a href="metrics.html" style = "color:white">metrics</a></h3>
+            <h3 class = "col-md-1"><a href="price.html" style = "color:white">price estimator</a></h3>
+            <h3 class = "col-md-1"><a href="bookings.html" style = "color:white">bookings optimization</a></h3>
+            <h3 class = "col-md-1"><a href="other.html" style = "color:white">other</a></h3>
+        </div>
 
-        <div class = "banner img-responsive col-md-12" id="chart_div1"></div>
-        <div class = "banner img-responsive col-md-12" id="chart_div2"></div>
     </div>
 
-    <h1><a href="home.html">click here to go to home</a></h1>
-    <h1><a href="metrics.html">click here to go to metrics</a></h1>
+
 </body>
 </html>
