@@ -42,6 +42,11 @@
         .b1{
             background-color: rgba(0, 0, 0, 0.5);
         }
+
+        * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
     </style>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -63,7 +68,7 @@
         ]);
 
         var options = {'title':'Average Price per Listing Type',
-                       'width':500,
+                       'width':600,
                        'height':300};
 
         var chart = new google.visualization.BarChart(document.getElementById('chart_div1'));
@@ -153,14 +158,9 @@
             <h4 class = "col-md-1"><a href="other.html" style = "color:white">other</a></h4>
         </div>
 
-        <div class = "row text-center">
-            <div class = "col-md-4">
-                <div class = "banner img-responsive col-md-12" id="chart_div1"></div>
-            </div>
-            <div class = "col-md-4">
-                <div class = "banner img-responsive col-md-12" id="chart_div2"></div>
-            </div>
-        </div>
+
+        <div class = "banner img-responsive col-md-12" id="chart_div1"></div>
+        <div class = "banner img-responsive col-md-12" id="chart_div2"></div>
         <div class = "banner img-responsive col-md-12" id="chart_div3"></div>
 
 

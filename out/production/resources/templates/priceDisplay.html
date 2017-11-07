@@ -41,6 +41,10 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
 
+        * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
     </style>
 
 
@@ -77,7 +81,7 @@
                 </div>
             </form>
 
-            <h2 th:text="'At your location, we estimate that you can earn around $' + ${estimation} + ' per week using Airbnb.'"></h2>
+            <h3 th:text="'At your location, we estimate that you can earn around $' + ${estimation} + ' per week using Airbnb.'"></h3>
         </div>
     </div>
 

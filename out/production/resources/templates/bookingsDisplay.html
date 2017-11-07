@@ -57,7 +57,7 @@
     <div class="container-fluid">
 
         <div class = "row b1">
-            <h4 class = "col-md-7">Airbnb Optimization</h4>
+            <h1 class = "col-md-7">Airbnb Optimization</h1>
             <h4 class = "col-md-1"><a href="home.html" style = "color:white">home</a></h4>
             <h4 class = "col-md-1"><a href="metrics.html" style = "color:white">metrics</a></h4>
             <h4 class = "col-md-1"><a href="price.html" style = "color:white">price estimator</a></h4>
@@ -66,8 +66,8 @@
         </div>
 
         <div class = "banner text-center">
-            <form method = "post" action="/priceDisplay">
-                <h2> Input coordinates to get estimated weekly profits using Airbnb!</h2>
+            <form method = "post" action="/bookingsDisplay">
+                <h2> Bookings!</h2>
                 <div class="form-group">
                     <div class="row">
                         <div class = "col-md-6">
@@ -80,6 +80,7 @@
                     <button class = "btn btn-primary" type="submit">Get!</button>
                 </div>
             </form>
+            <h3 th:text="'At your location, we estimate that you can earn the most priced at $' + ${estimation} + ' a day using Airbnb.'"></h3>
         </div>
     </div>
 

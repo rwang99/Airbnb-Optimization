@@ -210,13 +210,11 @@ public class OptimizeController {
     }*/
 
     @GetMapping("/price")
- //   @ResponseBody
     public String price(){
         return "/price";
     }
 
     @PostMapping("/priceDisplay")
-//    @ResponseBody
     public String estimatedPrice(HttpServletRequest request, ModelMap model){
         Double lat = Double.valueOf(request.getParameter("lat"));
         Double lon = Double.valueOf(request.getParameter("long"));
@@ -254,19 +252,20 @@ public class OptimizeController {
         return "/bookings";
     }
 
-    @GetMapping("/idealPrice/{lat}/{lon}")
-    @ResponseBody
-    public double idealPrice(@PathVariable double lat, @PathVariable double lon){
+    @PostMapping("/bookingsDisplay")
+    public String idealPrice(HttpServletRequest request, ModelMap model){
+        Double lat = Double.valueOf(request.getParameter("lat"));
+        Double lon = Double.valueOf(request.getParameter("long"));
+
         double margin = .1;         // Radius in terms of miles
         margin /= 69.0;       // conversion to lat/ong
 
         List<Listing> listings = listingRep.findByValid(true);
 
-        double sumPrice = 0, sumAvail60 = 0;
+        double sumPrice = 0;
         int frequency = 0;
         while (frequency < 30) {
             sumPrice = 0;
-            sumAvail60 = 0;
             frequency = 0;
             for (Listing place : listings) {
                 double latDiff = lat - place.getLatitude();
@@ -274,15 +273,15 @@ public class OptimizeController {
                 double distance = Math.sqrt(latDiff * latDiff + lonDiff * lonDiff);         // Calculates distance from listing and inputted coords
 
                 if (distance < margin) {                     // If listing is within bounds
-                    sumPrice += place.getPrice() + place.getCleaning();
-                    sumAvail60 += place.getAvail60()/60.0;
+                    sumPrice += place.getPrice();
                     frequency++;
                 }
             }
             //System.out.println(sumPrice + " " + frequency);
             margin *= 2;            // Doubles margin of error until finds at least 30 listings to make an accurate judgement off
         }
-        return (sumPrice/frequency) * (sumAvail60/frequency);
+        model.addAttribute("estimation", (Math.round((sumPrice/frequency)*100)/100));
+        return "/bookingsDisplay";
     }
 
     @GetMapping("/other")
