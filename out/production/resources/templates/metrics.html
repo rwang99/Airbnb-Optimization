@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-    <!--<link rel="stylesheet" th:href="@{/app.css}"/>-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"/>
 
 
@@ -11,11 +11,11 @@
 
         body {
             margin: 0;
-            background-color: black;
+            background-color: #3c4741;
             background-image: url("../../static/images/bg.jpg");
             background-size: 100% auto;
             display: compact;
-
+            font-family: 'Raleway', Helvetica, Arial, sans-serif;
         }
 
         h1 {
@@ -69,7 +69,11 @@
 
         var options = {'title':'Average Price per Listing Type',
                        'width':600,
-                       'height':300};
+                       'height':300,
+                       'colors': ['#887465'],
+                       'animation': {'startup': true,
+                       'easing':'out',
+                       'duration': 3000}};
 
         var chart = new google.visualization.BarChart(document.getElementById('chart_div1'));
         chart.draw(data, options);
@@ -85,7 +89,9 @@
 
         var options2 = {'title':'Percent distribution of Listing Type',
                        'width':500,
-                       'height':300};
+                       'height':300,
+                       'is3D':true,
+                       'colors': ['#b0b4bd', '#7f95a3', '#66798a']};
 
         var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));
         chart2.draw(data2, options2);
@@ -135,7 +141,11 @@
 
         var options3 = {'title':'Most expensive neighborhoods',
                        'width':600,
-                       'height':800};
+                       'height':800,
+                       'colors':['#959595'],
+                       'animation': {'startup': true,
+                       'easing':'out',
+                       'duration': 6000}};
 
         var chart3 = new google.visualization.BarChart(document.getElementById('chart_div3'));
         chart3.draw(data3, options3);

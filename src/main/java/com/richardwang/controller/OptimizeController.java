@@ -1,15 +1,11 @@
 package com.richardwang.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.richardwang.dao.ListingRepository;
 import com.richardwang.model.Listing;
 import com.richardwang.model.neighborhood;
 import com.richardwang.model.roomType;
-import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,26 +29,6 @@ public class OptimizeController {
     public String getHomepage2(){
         return "/home";
     }
-
-
-/*
-    @RequestMapping(value="/hello", method = RequestMethod.GET)
-    public String helloForm(){
-        return "helloform";
-    }
-
-    //@GetMapping("/name")
-    @RequestMapping(value="/name", method = RequestMethod.POST)
-    public String getPopularNames(HttpServletRequest request, Model model){
-        String name = request.getParameter("name");
-        if (name == null){
-            name = "world";
-        }
-        model.addAttribute("name", name);
-
-        return "/home";
-    }
-*/
 
 
     @RequestMapping("/hostName")
