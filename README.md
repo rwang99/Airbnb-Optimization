@@ -29,20 +29,20 @@ This program takes in Airbnb public data and displays metrics, and has functions
 	- Visualization animations
 		- Uses Google Charts API and their animations option.
 
+<b>Other:</b>
 Pre-processing of data was done to remove unnecessary data and to filter out erroneous data. To conserve memory, many columns that were irrelevant were discarded. Listings with 0 reviews or extreme outliers were discounted from data processing to provide accurate results and estimations without erronous data or outliers. Furthermore, in the review score and number of reviews columns, blank spaces were replaced with "-1" to signify a listing to be ignored through the csv reader program. Using excel's cell formatting feature, dollar signs were removed from the price cells to speed up reader processing later on.
 
-Data is first parsed through the CSVReader class, which utilizes Apache Commons CSVReader. This parses each listing into a listing object. Listings with values of -1 from pre-processing were assigned a boolean value "valid" to false, to remove erroneous listings or listings that may not have been "proven" to be effective.
+Data is first parsed through the CSVReader class, which utilizes Apache Commons CSVReader. This parses each listing into a listing object. Listings with values of -1 from pre-processing were assigned a boolean value "valid" to false, to remove erroneous listings or listings that may not have been "proven" to be effective. Even with the data removed, there is still plenty of data to produce accurate averages and results. After the CSVReader parses the .csv file, it is passed to DBSeeder.java that sends the listing objects to the MongoDB database.
 
-Uses Spring framework and Java for data processing and back-end. Mongodb for storing and querying data.
-Thymeleaf, HTMl, CSS, and Bootstrap for front-end.
+Back-end uses Spring framework and Java. Mongodb was used for storing and querying data. Thymeleaf was used for templating, while HTMl, CSS, and Bootstrap aided in front-end design and functionality. Google Charts API was used to display metrics. No templates were used for the web design.
 
-Dependencies:
+Dependencies required:
 	- Spring boot starter thymeleaf
 	- Spring boot
 	- Spring boot starter data mongodb
-	- mongodb java driver
+	- Mongodb java driver
 	- Apache commons csv
-	- spring data mongodb parent
+	- Spring data mongodb parent
 
 Background image credit: by Christopher Harris on Unsplash (https://unsplash.com/photos/bJqeJxeyiJE)
 
