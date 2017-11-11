@@ -5,8 +5,10 @@ package com.richardwang.config;
 import com.richardwang.dao.ListingRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 @Component
+@Repository
 public class DbSeeder implements CommandLineRunner{
 
     private ListingRepository listingRep;
@@ -19,12 +21,12 @@ public class DbSeeder implements CommandLineRunner{
     public void run(String... strings) throws Exception {
 
         // UNCOMMENT BELOW TWO LINES TO REFRESH/RESEED DATA
-/*
+
 
         listingRep.deleteAll();
         listingRep.save(CSVreader.readCSV());
 
-*/
+
 
 
     }
