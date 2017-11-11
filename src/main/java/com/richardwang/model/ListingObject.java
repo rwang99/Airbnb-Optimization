@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Listings")
-public class ListingObject {
+public class ListingObject {            // Listing object, each data point represented by one of these
 
     @Id
-    private long id;
+    private long id;            // Unique ID
 
     private String title, hostName;
     private neighborhood n;
@@ -20,8 +20,6 @@ public class ListingObject {
     @Indexed(direction = IndexDirection.ASCENDING)
     private double price;
     private double cleaning;
-
-
 
     private int avail30, avail60, avail90, avail365;
 
@@ -63,22 +61,8 @@ public class ListingObject {
         }
     }
 
-    /*public ListingObject(long id, String title, String hostName, neighborhood n, roomType r,
-                   double latitude, double longitude, double price, double cleaning, int numReviews,
-                   int reviewScore, double reviewPerMonth) {
-        this.id = id;
-        this.title = title;
-        this.hostName = hostName;
-        this.n = n;
-        this.r = r;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.price = price;
-        this.cleaning = cleaning;
-        this.numReviews = numReviews;
-        this.reviewScore = reviewScore;
-        this.reviewPerMonth = reviewPerMonth;
-    }*/
+
+    // Getters
 
     public long getId() {
         return id;

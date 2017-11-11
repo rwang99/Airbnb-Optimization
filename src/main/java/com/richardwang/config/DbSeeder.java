@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Component
 @Repository
-public class DbSeeder implements CommandLineRunner{
+public class DbSeeder implements CommandLineRunner{     // Loads data to database
 
     private ListingRepository listingRep;
 
@@ -22,9 +22,8 @@ public class DbSeeder implements CommandLineRunner{
 
         // UNCOMMENT BELOW TWO LINES TO REFRESH/RESEED DATA
 
-
-        listingRep.deleteAll();
-        listingRep.save(CSVreader.readCSV());
+        listingRep.deleteAll();             // Clears previous entries
+        listingRep.save(CSVreader.readCSV());       // Refreshes with new data
 
 
 

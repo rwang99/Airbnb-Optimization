@@ -4,6 +4,8 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
+// Enum for neighborhood names
+
 public enum neighborhood {
     BAYVIEW("Bayview"),
     BERNAL("Bernal Heights"),
@@ -48,7 +50,7 @@ public enum neighborhood {
 
     private static final Map<String, neighborhood> lookup = new HashMap<>();
 
-    static {
+    static {    // reverse lookup
         for (neighborhood n : EnumSet.allOf(neighborhood.class)){
             lookup.put(n.getName(), n);
         }

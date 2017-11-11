@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 
-public class CSVreader {
+public class CSVreader {            // Reads data from csv file and puts into a list of listing objects
 
     // CSV header
     private static final String[] HEADER = {"id", "desc", "hostName", "neighborhood", "lat", "lon", "roomType",
@@ -29,15 +29,13 @@ public class CSVreader {
         CSVFormat csvFileFormat = CSVFormat.DEFAULT.withHeader(HEADER);
 
         List<ListingObject> listings = new ArrayList<>();
-        try {
+        try {       // Opens file
             listings = new ArrayList<>();
             fileReader = new FileReader("data/organizedListings.csv");
             csvFileParser = CSVParser.parse(fileReader, csvFileFormat);
             List csvRecords = csvFileParser.getRecords();
 
             //Read the CSV file records starting from the second record to skip the header
-
-            //for (int i = 1; i < 30; i++){
             for (int i = 1; i < csvRecords.size(); i++) {
                 CSVRecord record = (CSVRecord)csvRecords.get(i);
 
@@ -48,9 +46,8 @@ public class CSVreader {
                         Integer.parseInt(record.get("avail30")),Integer.parseInt(record.get("avail60")),
                         Integer.parseInt(record.get("avail90")), Integer.parseInt(record.get("avail365")),
                         Integer.parseInt(record.get("numReviews")),Integer.parseInt(record.get("reviewScore")),
-                        Double.parseDouble(record.get("rpm")));
-                listings.add(l);
-                //System.out.println(l);
+                        Double.parseDouble(record.get("rpm")));         // Parses the line
+                listings.add(l);        // Adds as it goes
 
             }
 

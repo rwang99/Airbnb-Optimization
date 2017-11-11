@@ -4,6 +4,8 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
+// Enum for room type
+
 public enum roomType {
     ENTIRE("Entire home/apt"),
     PRIVATE("Private room"),
@@ -13,7 +15,7 @@ public enum roomType {
 
     private static final Map<String, roomType> lookup = new HashMap<>();
 
-    static {
+    static {        // Reverse lookup
         for (roomType r : EnumSet.allOf(roomType.class)){
             lookup.put(r.type(), r);
         }

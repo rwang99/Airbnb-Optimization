@@ -14,7 +14,7 @@ import java.util.*;
 
 
 @Controller
-public class OptimizeController {
+public class OptimizeController {           // Main controller for algorithms
 
     @Autowired
     private ListingRepository listingRep;
@@ -58,8 +58,8 @@ public class OptimizeController {
 
     @RequestMapping("/metrics")
 //    @ResponseBody
-    public String mainMetrics(ModelMap model){
-        List<ListingObject> listingList = listingRep.findByValid(true);
+    public String mainMetrics(ModelMap model){      // Data for graphs
+        List<ListingObject> listingList = listingRep.findByValid(true);         // List of all valid listings
 
         // Deliverable 1: 1: Bar chart of average price per room type
         Map<roomType, Double> distribution11 = new HashMap<>();

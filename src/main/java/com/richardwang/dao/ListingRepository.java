@@ -29,7 +29,4 @@ public interface ListingRepository extends MongoRepository<ListingObject,Integer
     @Query(value = "{valid:?0}")
     List<ListingObject> findByValid(Boolean valid);
 
-//    @Query(value = "{'latitude' : { $gt: ?0+.02, $lt: ?0-.02}, 'longitude' : { $gt: ?1+.02, $lt : ?1-.02}}" )
-//    List<ListingObject> find
-
 }
