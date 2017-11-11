@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar app.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/airbnb-rwang-0.1.0.jar
