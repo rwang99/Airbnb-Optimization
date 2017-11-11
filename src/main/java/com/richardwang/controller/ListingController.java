@@ -1,14 +1,11 @@
 package com.richardwang.controller;
 
 import com.richardwang.dao.ListingRepository;
-import com.richardwang.model.Listing;
+import com.richardwang.model.ListingObject;
 import com.richardwang.model.neighborhood;
 import com.richardwang.model.roomType;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.data.mongodb.repository.Query;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -24,18 +21,18 @@ public class ListingController {
     }
 
     @GetMapping("/all")
-    public List<Listing> getAll(){
-        List<Listing> listings = this.listingRep.findAll();
+    public List<ListingObject> getAll(){
+        List<ListingObject> listings = this.listingRep.findAll();
         return listings;
     }
 
     @PutMapping
-    public void insert(@RequestBody Listing listing){
+    public void insert(@RequestBody ListingObject listing){
         listingRep.insert(listing);
     }
 
     @PostMapping
-    public void update(@RequestBody Listing listing){
+    public void update(@RequestBody ListingObject listing){
         listingRep.save(listing);
     }
 
@@ -45,43 +42,43 @@ public class ListingController {
     }
 
     @GetMapping("/{id}")
-    public Listing getbyID(@PathVariable("id") String id){
-        Listing l = listingRep.findById(Integer.valueOf(id));
+    public ListingObject getbyID(@PathVariable("id") String id){
+        ListingObject l = listingRep.findById(Integer.valueOf(id));
         return l;
     }
 
     @GetMapping("/price/{maxPrice}")
-    public List<Listing> getByPrice(@PathVariable("maxPrice") double maxPrice){
-        List<Listing> l = listingRep.findByPriceLessThan(maxPrice);
+    public List<ListingObject> getByPrice(@PathVariable("maxPrice") double maxPrice){
+        List<ListingObject> l = listingRep.findByPriceLessThan(maxPrice);
         return l;
     }
 
     @GetMapping("/neighborhood/{nHood}")
-    public List<Listing> getByN(@PathVariable("nHood") String nHood){
-        List<Listing> l = listingRep.findByN(neighborhood.valueOf(nHood));
+    public List<ListingObject> getByN(@PathVariable("nHood") String nHood){
+        List<ListingObject> l = listingRep.findByN(neighborhood.valueOf(nHood));
         return l;
     }
 
     @GetMapping("/roomType/{roomT}")
-    public List<Listing> getByR(@PathVariable("roomT") String roomT){
-        List<Listing> l = listingRep.findByR(roomType.valueOf(roomT));
+    public List<ListingObject> getByR(@PathVariable("roomT") String roomT){
+        List<ListingObject> l = listingRep.findByR(roomType.valueOf(roomT));
         return l;
     }
 
     @GetMapping("/isValid/{valid}")
-    public List<Listing> getByValid(@PathVariable("valid") String valid){
-        List<Listing> l = listingRep.findByValid(Boolean.valueOf(valid));
+    public List<ListingObject> getByValid(@PathVariable("valid") String valid){
+        List<ListingObject> l = listingRep.findByValid(Boolean.valueOf(valid));
         return l;
     }
 
   /*  // Deliverable 1: 1
     @GetMapping("/hostName/{name}")
     public Map<String, Double> getByHostName(@PathVariable("name") String name){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
 
         Map<String, Double> money = new TreeMap<>();
         Map<String, Integer> frequency = new HashMap<>();
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             if (money.containsKey(l.getHostName())){
                 money.put(l.getHostName(),money.get(l.getHostName())+l.getPrice());
                 frequency.put(l.getHostName(),frequency.get(l.getHostName())+1);
@@ -102,7 +99,7 @@ public class ListingController {
     // Deliverable 1: 2, pie chart
     @GetMapping("/costRoomType")
     public Map<roomType, Double> costRoomType(){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
 
         Map<roomType, Double> distribution = new HashMap<>();
         Map<roomType, Integer> frequency = new HashMap<>();
@@ -115,7 +112,7 @@ public class ListingController {
         frequency.put(roomType.SHARED, 0);
 
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             distribution.put(l.getR(),distribution.get(l.getR())+l.getPrice());
             frequency.put(l.getR(),frequency.get(l.getR())+1);
         }
@@ -129,14 +126,14 @@ public class ListingController {
 
     @GetMapping("/roomDistribution")
     public Map<roomType, Double> roomDistribution(){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
 
         Map<roomType, Double> distribution = new HashMap<>();
         distribution.put(roomType.ENTIRE, 0.0);
         distribution.put(roomType.PRIVATE, 0.0);
         distribution.put(roomType.SHARED, 0.0);
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             distribution.put(l.getR(),distribution.get(l.getR())+1);
         }
 
@@ -151,11 +148,11 @@ public class ListingController {
     // Deliverable 1: 3, bar graph
     @GetMapping("/expensiveNeighborhoods")
     public Map<neighborhood, Double> expensiveNeighborhoods(){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
         Map<neighborhood,Double> priceAggregate = new HashMap<>();
         Map<neighborhood, Integer> frequency = new HashMap<>();
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             if (priceAggregate.containsKey(l.getN())){
                 priceAggregate.put(l.getN(),priceAggregate.get(l.getN())+l.getPrice());
                 frequency.put(l.getN(),frequency.get(l.getN())+1);
@@ -186,7 +183,7 @@ public class ListingController {
         double margin = .1;         // Radius in terms of miles
         margin /= 69.0;       // conversion
 
-        List<Listing> listings = listingRep.findByValid(true);
+        List<ListingObject> listings = listingRep.findByValid(true);
 
         double sumPrice = 0, sumAvail60 = 0;
         int frequency = 0;
@@ -194,7 +191,7 @@ public class ListingController {
             sumPrice = 0;
             sumAvail60 = 0;
             frequency = 0;
-            for (Listing place : listings) {
+            for (ListingObject place : listings) {
                 double latDiff = lat - place.getLatitude();
                 double lonDiff = lon - place.getLongitude();
                 double distance = Math.sqrt(latDiff * latDiff + lonDiff * lonDiff);         // Calculates distance from listing and inputted coords
@@ -216,7 +213,7 @@ public class ListingController {
         double margin = .1;         // Radius in terms of miles
         margin /= 69.0;       // conversion to lat/ong
 
-        List<Listing> listings = listingRep.findByValid(true);
+        List<ListingObject> listings = listingRep.findByValid(true);
 
         double sumPrice = 0, sumAvail60 = 0;
         int frequency = 0;
@@ -224,7 +221,7 @@ public class ListingController {
             sumPrice = 0;
             sumAvail60 = 0;
             frequency = 0;
-            for (Listing place : listings) {
+            for (ListingObject place : listings) {
                 double latDiff = lat - place.getLatitude();
                 double lonDiff = lon - place.getLongitude();
                 double distance = Math.sqrt(latDiff * latDiff + lonDiff * lonDiff);         // Calculates distance from listing and inputted coords
@@ -243,11 +240,11 @@ public class ListingController {
 
     @GetMapping("/popularNeighborhoods")
     public Map<neighborhood, Double> popularNeighborhoods(){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
         Map<neighborhood, Double> reviewAggregate = new HashMap<>();
         Map<neighborhood, Integer> frequency = new HashMap<>();
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             if (reviewAggregate.containsKey(l.getN())){
                 reviewAggregate.put(l.getN(),reviewAggregate.get(l.getN())+l.getReviewScore());
                 frequency.put(l.getN(),frequency.get(l.getN())+1);

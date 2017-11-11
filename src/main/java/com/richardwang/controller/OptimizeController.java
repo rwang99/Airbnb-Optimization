@@ -1,7 +1,7 @@
 package com.richardwang.controller;
 
 import com.richardwang.dao.ListingRepository;
-import com.richardwang.model.Listing;
+import com.richardwang.model.ListingObject;
 import com.richardwang.model.neighborhood;
 import com.richardwang.model.roomType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,11 +34,11 @@ public class OptimizeController {
     @RequestMapping("/hostName")
 //    @ResponseBody
     public String getByHostName(ModelMap model){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
 
         Map<String, Double> money = new TreeMap<>();
         Map<String, Integer> frequency = new HashMap<>();
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             if (money.containsKey(l.getHostName())){
                 money.put(l.getHostName(),money.get(l.getHostName())+l.getPrice());
                 frequency.put(l.getHostName(),frequency.get(l.getHostName())+1);
@@ -59,7 +59,7 @@ public class OptimizeController {
     @RequestMapping("/metrics")
 //    @ResponseBody
     public String mainMetrics(ModelMap model){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
 
         // Deliverable 1: 1: Bar chart of average price per room type
         Map<roomType, Double> distribution11 = new HashMap<>();
@@ -73,7 +73,7 @@ public class OptimizeController {
         frequency.put(roomType.SHARED, 0);
 
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             distribution11.put(l.getR(),distribution11.get(l.getR())+l.getPrice());
             frequency.put(l.getR(),frequency.get(l.getR())+1);
         }
@@ -93,7 +93,7 @@ public class OptimizeController {
         distribution12.put(roomType.PRIVATE, 0.0);
         distribution12.put(roomType.SHARED, 0.0);
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             distribution12.put(l.getR(),distribution12.get(l.getR())+1);
         }
 
@@ -111,7 +111,7 @@ public class OptimizeController {
         Map<neighborhood,Double> priceAggregate = new HashMap<>();
         Map<neighborhood, Integer> frequency13 = new HashMap<>();
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             if (priceAggregate.containsKey(l.getN())){
                 priceAggregate.put(l.getN(),priceAggregate.get(l.getN())+l.getPrice());
                 frequency13.put(l.getN(),frequency13.get(l.getN())+1);
@@ -132,14 +132,14 @@ public class OptimizeController {
     /*@GetMapping("/roomDistribution")
     @ResponseBody
     public Map<roomType, Double> roomDistribution(){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
 
         Map<roomType, Double> distribution = new HashMap<>();
         distribution.put(roomType.ENTIRE, 0.0);
         distribution.put(roomType.PRIVATE, 0.0);
         distribution.put(roomType.SHARED, 0.0);
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             distribution.put(l.getR(),distribution.get(l.getR())+1);
         }
 
@@ -155,11 +155,11 @@ public class OptimizeController {
     @GetMapping("/expensiveNeighborhoods")
     @ResponseBody
     public Map<neighborhood, Double> expensiveNeighborhoods(){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
         Map<neighborhood,Double> priceAggregate = new HashMap<>();
         Map<neighborhood, Integer> frequency = new HashMap<>();
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             if (priceAggregate.containsKey(l.getN())){
                 priceAggregate.put(l.getN(),priceAggregate.get(l.getN())+l.getPrice());
                 frequency.put(l.getN(),frequency.get(l.getN())+1);
@@ -197,7 +197,7 @@ public class OptimizeController {
         double margin = .1;         // Radius in terms of miles
         margin /= 69.0;       // conversion
 
-        List<Listing> listings = listingRep.findByValid(true);
+        List<ListingObject> listings = listingRep.findByValid(true);
 
         double sumPrice = 0, sumAvail60 = 0;
         int frequency = 0;
@@ -205,7 +205,7 @@ public class OptimizeController {
             sumPrice = 0;
             sumAvail60 = 0;
             frequency = 0;
-            for (Listing place : listings) {
+            for (ListingObject place : listings) {
                 double latDiff = lat - place.getLatitude();
                 double lonDiff = lon - place.getLongitude();
                 double distance = Math.sqrt(latDiff * latDiff + lonDiff * lonDiff);         // Calculates distance from listing and inputted coords
@@ -236,14 +236,14 @@ public class OptimizeController {
         double margin = .1;         // Radius in terms of miles
         margin /= 69.0;       // conversion to lat/ong
 
-        List<Listing> listings = listingRep.findByValid(true);
+        List<ListingObject> listings = listingRep.findByValid(true);
 
         double sumPrice = 0;
         int frequency = 0;
         while (frequency < 30) {
             sumPrice = 0;
             frequency = 0;
-            for (Listing place : listings) {
+            for (ListingObject place : listings) {
                 double latDiff = lat - place.getLatitude();
                 double lonDiff = lon - place.getLongitude();
                 double distance = Math.sqrt(latDiff * latDiff + lonDiff * lonDiff);         // Calculates distance from listing and inputted coords
@@ -262,11 +262,11 @@ public class OptimizeController {
 
     @GetMapping("/other")
     public String popularNeighborhoods(ModelMap model){
-        List<Listing> listingList = listingRep.findByValid(true);
+        List<ListingObject> listingList = listingRep.findByValid(true);
         Map<neighborhood, Double> reviewAggregate = new HashMap<>();
         Map<neighborhood, Integer> frequency = new HashMap<>();
 
-        for (Listing l : listingList){
+        for (ListingObject l : listingList){
             if (reviewAggregate.containsKey(l.getN())){
                 reviewAggregate.put(l.getN(),reviewAggregate.get(l.getN())+l.getReviewScore());
                 frequency.put(l.getN(),frequency.get(l.getN())+1);
