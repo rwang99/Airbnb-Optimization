@@ -29,9 +29,13 @@ dependencies {
     compile 'org.apache.commons:commons-csv:1.5'
     compile 'org.springframework.data:spring-data-mongodb-parent:2.0.1.RELEASE'
 
-
-
 }
+
+jar {
+    baseName = 'airbnb-rwang'
+    version = '0.1.0'
+}
+
 
 task stage(type: Copy, dependsOn: [clean, build]) {
     from jar.archivePath
