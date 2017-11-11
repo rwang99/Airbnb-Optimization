@@ -1,6 +1,7 @@
 group 'com.richardwang'
 version '1.0-SNAPSHOT'
 
+
 buildscript{
     repositories{
         mavenCentral()
@@ -13,7 +14,6 @@ buildscript{
 
 apply plugin: 'java'
 apply plugin: 'spring-boot'
-//apply plugin: 'idea'
 
 sourceCompatibility = 1.8
 

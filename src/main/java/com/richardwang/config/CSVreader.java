@@ -74,8 +74,4 @@ public class CSVreader {
         return listings;
     }
 
-//    public static void main(String[] args) {
-//        readCSV();
-//    }
-
 }
