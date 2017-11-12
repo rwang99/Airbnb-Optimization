@@ -4,6 +4,7 @@ import com.richardwang.model.ListingObject;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.stereotype.Component;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,7 +15,7 @@ import java.util.List;
  *  Modified to fit specific csv file
  */
 
-
+@Component
 public class CSVreader {            // Reads data from csv file and puts into a list of listing objects
 
     // CSV header
