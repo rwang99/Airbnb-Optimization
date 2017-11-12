@@ -1,3 +1,4 @@
+/*
 package com.richardwang.config;
 
 import com.mongodb.MongoClientURI;
@@ -21,4 +22,4 @@ public class MongoLabConfiguration {
     MongoTemplate mongoTemplate() throws Exception {
         return new MongoTemplate(mongoDbFactory());
     }
-}
+}*/
