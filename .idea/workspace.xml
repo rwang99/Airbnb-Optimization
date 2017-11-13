@@ -108,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OptimizeController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OptimizeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/richardwang/controller/OptimizeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3839">
-              <caret line="245" column="16" lean-forward="true" selection-start-line="245" selection-start-column="16" selection-end-line="245" selection-end-column="16" />
+            <state relative-caret-position="1559">
+              <caret line="209" column="16" lean-forward="false" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
               <folding>
                 <element signature="e#695#696#0" expanded="true" />
                 <element signature="e#724#725#0" expanded="true" />
@@ -127,7 +127,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/price.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
-              <caret line="70" column="42" lean-forward="false" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+              <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -137,7 +137,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bookings.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
-              <caret line="70" column="42" lean-forward="true" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+              <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -147,17 +147,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bookingsDisplay.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="520">
-              <caret line="70" column="42" lean-forward="false" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+              <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="priceDisplay.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="priceDisplay.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/priceDisplay.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
-              <caret line="70" column="42" lean-forward="true" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+              <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -636,11 +636,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/richardwang/config/ThymeleafExtension.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/richardwang/model/ListingObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/richardwang/controller/OptimizeController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/price.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/bookings.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/bookingsDisplay.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/priceDisplay.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/price.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/bookingsDisplay.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/bookings.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/richardwang/controller/OptimizeController.java" />
       </list>
     </option>
   </component>
@@ -1427,31 +1427,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/richardwang/controller/OptimizeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/priceDisplay.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3839">
-          <caret line="245" column="16" lean-forward="true" selection-start-line="245" selection-start-column="16" selection-end-line="245" selection-end-column="16" />
-          <folding>
-            <element signature="e#695#696#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="351">
+          <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/price.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
-          <caret line="70" column="42" lean-forward="false" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bookings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="70" column="42" lean-forward="true" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+          <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1459,16 +1446,29 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bookingsDisplay.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
-          <caret line="70" column="42" lean-forward="false" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+          <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/priceDisplay.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bookings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="70" column="42" lean-forward="true" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+        <state relative-caret-position="400">
+          <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/richardwang/controller/OptimizeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1559">
+          <caret line="209" column="16" lean-forward="false" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
+          <folding>
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -169,7 +169,7 @@ public class OptimizeController {           // Main controller for algorithms
         }
         // Sends to template the final output
         model.addAttribute("estimation",Math.round((sumPrice/frequency) * (sumAvail60/frequency)*100)/100);
-        return "/priceDisplay";
+        return "priceDisplay";
     }
 
     @GetMapping("/bookings")        // Bookings form for deliverable 3, no output
@@ -207,7 +207,7 @@ public class OptimizeController {           // Main controller for algorithms
             // Typically only one pass through is enough to satisfy 30 listing requirement, occasionally two pass throughs
         }
         model.addAttribute("estimation", (Math.round((sumPrice/frequency)*100)/100));       // Sends data to template
-        return "/bookingsDisplay";
+        return "bookingsDisplay";
     }
 
     @GetMapping("/other")           // Bonus deliverable: most popular neighborhood
