@@ -8,7 +8,7 @@ Web app, UI, and functionality made by Richard Wang for the Capital One MindSumo
 This project took three weeks to complete, and was my first experience with frameworks, web apps, data storage, html, and css whatsoever. Many long hours were put into just learning the different frameworks, languages, and concepts required for this project and it was a very laboring yet rewarding experience. I hope you enjoy this as much as I did seeing the final product develop! 
 
 <h3> About the program </h3>
-This program takes in Airbnb public data and displays metrics, and has functions outputting a recommended dollar amounts given the prompt and a latitude/longitude. 
+This program takes in Airbnb public data and displays metrics, and has functions outputting a recommended dollar amounts given the prompt and a latitude/longitude.
 
 <b>Home:</b>
 ![Image](https://i.imgur.com/E0xwYR8.jpg)
@@ -33,14 +33,14 @@ This program takes in Airbnb public data and displays metrics, and has functions
 	- Takes in latitude and longitudinal coordinates, and produces an estimated dollar amount of the money you can make in a week at that location.
 	- O(n) time complexity
 	- How it works:
-		- Using coordinates and given coordinates of all listings, the program starts with a radius of 0.1 miles, and evaluates properties within that radius. If fewer than 30 properties were selected (to produce an accurate yet local average), then the radius doubles and the program restarts. Typically, this condition will be met within the first or second try if the location picked is in the city. It then computes the average price and cleaning fee of those properties, and multiples the result by the average number of days they are booked per week. The program then displays the final value.
+		- Using coordinates and given coordinates of all listings, the program starts with a radius of 0.1 miles, and evaluates properties within that radius. If fewer than 30 properties were selected (to produce an accurate yet local average), then the radius doubles and the program restarts. Typically, this condition will be met within the first or second try if the location picked is in the city. It then computes the average price and cleaning fee of those properties, and multiples the result by the average number of .days they are booked per week. The program then displays the final value. Works best with coordinates in/near San Francisco.
 
 2. Bookings Optimization
 ![Bookings](https://i.imgur.com/EP6riQK.jpg)
 	- Takes in latitude and longitudinal coordinates, produces a dollar value of what we think a property should be listed at to maximize profits. 
 	- O(n) time complexity
 	- How it works:
-		- Using coordinates and given coordinates of all listings, the program starts with a radius of 0.1 miles, and evaluates properties within that radius. If fewer than 30 properties were selected (to produce an accurate yet local average), then the radius doubles and the program restarts. Typically, this condition will be met within the first or second try if the location picked is in the city. It then computes the average price of those properties, and displays the value. 
+		- Using coordinates and given coordinates of all listings, the program starts with a radius of 0.1 miles, and evaluates properties within that radius. If fewer than 30 properties were selected (to produce an accurate yet local average), then the radius doubles and the program restarts. Typically, this condition will be met within the first or second try if the location picked is in the city. It then computes the average price of those properties, and displays the value. Works best with coordinates in/near San Francisco.
 
 3. Bonus features
 ![Bonus](https://i.imgur.com/fbDSs6v.jpg)
