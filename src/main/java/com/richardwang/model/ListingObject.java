@@ -32,6 +32,7 @@ public class ListingObject {            // Listing object, each data point repre
 
     }
 
+    // Constructor that takes in csv data and converts into object
     public ListingObject(long id, String title, String hostName, String neighbor,
                          double latitude, double longitude, String room, double price, double cleaning,
                          int avail30, int avail60, int avail90, int avail365,
