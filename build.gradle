@@ -28,7 +28,6 @@ dependencies {
     compile 'org.mongodb:mongo-java-driver:3.5.0'
     compile 'org.apache.commons:commons-csv:1.5'
     compile 'org.springframework.data:spring-data-mongodb-parent:2.0.1.RELEASE'
-    /*compile 'org.springframework.data:spring-data-commons-core:1.4.1.RELEASE'*/
 
 }
 
