@@ -16,7 +16,7 @@ public class ThymeleafExtension {
     @PostConstruct
     public void extension() {
         FileTemplateResolver resolver = new FileTemplateResolver();
-        resolver.setPrefix("D:\\templates\\");
+        resolver.setPrefix("/WEB-INF/");
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML5");
         resolver.setOrder(templateEngine.getTemplateResolvers().size());
