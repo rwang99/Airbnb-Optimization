@@ -2,7 +2,7 @@
 
 <h2> See it live: https://airbnb-rwang.herokuapp.com/home.html </h2>
 
-Web app and functionality made by Richard Wang for the Capital One MindSumo Challenge (https://www.mindsumo.com/contests/airbnb-sf)
+Web app, UI, and functionality made by Richard Wang for the Capital One MindSumo Challenge (https://www.mindsumo.com/contests/airbnb-sf)
 
 <h3> Personal Note </h3>
 This project took three weeks to complete, and was my first experience with frameworks, web apps, data storage, html, and css whatsoever. Many long hours were put into just learning the different frameworks, languages, and concepts required for this project and it was a very laboring yet rewarding experience. I hope you enjoy this as much as I did seeing the final product develop! 
