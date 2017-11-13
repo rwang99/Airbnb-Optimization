@@ -25,7 +25,7 @@ public class OptimizeController {           // Main controller for algorithms
         return "/home";
     }
 
-    @RequestMapping(value = "/home")
+    @RequestMapping(value = "/home.html")
     public String getHomepage2(){
         return "/home";
     }
