@@ -17,20 +17,28 @@ This program takes in Airbnb public data and displays metrics, and has functions
 ![Metrics Image](https://i.imgur.com/emsL29O.jpg)
 
 1. Bar graph of average price of a room per listing type
+	- Utilizes maps to average price of all valid listings of a room type
+	- O(n) time complexity
 2. Pie chart of distribution of listing types throughout total listings
+	- Finds percentage of all listings that a room type has
+	- O(n) time complexity
 3. Bar graph comparing the average prices in each neighborhood
+	- Lists all neighborhoods and the average listing price
+	- O(n) time complexity
 	- Some labels may be hidden due to sizing. Hover over each bar to show data!
 
 <b>Functions:</b>
 1. Price Estimator
 ![Price Estimator](https://i.imgur.com/tOs3HT9.jpg)
 	- Takes in latitude and longitudinal coordinates, and produces an estimated dollar amount of the money you can make in a week at that location.
+	- O(n) time complexity
 	- How it works:
 		- Using coordinates and given coordinates of all listings, the program starts with a radius of 0.1 miles, and evaluates properties within that radius. If fewer than 30 properties were selected (to produce an accurate yet local average), then the radius doubles and the program restarts. Typically, this condition will be met within the first or second try if the location picked is in the city. It then computes the average price and cleaning fee of those properties, and multiples the result by the average number of days they are booked per week. The program then displays the final value.
 
 2. Bookings Optimization
 ![Bookings](https://i.imgur.com/EP6riQK.jpg)
 	- Takes in latitude and longitudinal coordinates, produces a dollar value of what we think a property should be listed at to maximize profits. 
+	- O(n) time complexity
 	- How it works:
 		- Using coordinates and given coordinates of all listings, the program starts with a radius of 0.1 miles, and evaluates properties within that radius. If fewer than 30 properties were selected (to produce an accurate yet local average), then the radius doubles and the program restarts. Typically, this condition will be met within the first or second try if the location picked is in the city. It then computes the average price of those properties, and displays the value. 
 
