@@ -1,6 +1,6 @@
 # Airbnb-Optimization
 
-<h2> See it live: https://airbnb-rwang.herokuapp.com/home.html </h2>
+deprecated 3/31/21 ~~See it live: https://airbnb-rwang.herokuapp.com/home.html~~
 
 Web app, UI, and functionality made by Richard Wang for the Capital One MindSumo Challenge (https://www.mindsumo.com/contests/airbnb-sf)
 
